@@ -6,25 +6,32 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.ComposeView
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
-class FirstActivity : ComponentActivity() {
+class FirstActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContent {
-            Lab3_4Theme {
-                Scaffold(
-                    topBar = { TopAppBar(title = { Text("First") }) },
-                    bottomBar = { BottomNavigationBar(this) },
-                    content = { Layout() })
+        setContentView(
+            ComposeView(this).apply {
+                setContent {
+                    Lab3_4Theme {
+                        Scaffold(
+                            topBar = { TopAppBar(title = { Text("First") }) },
+                            bottomBar = { BottomNavigationBar(this@FirstActivity) },
+                            content = { Layout() })
+                    }
+                }
+                id = R.id.activity_first
             }
-        }
+        )
     }
 
     @Composable
