@@ -1,10 +1,7 @@
 package aleksey.vasiliev.lab3_4
 
-import aleksey.vasiliev.lab3_4.Shared.BottomNavigationBar
 import aleksey.vasiliev.lab3_4.ui.theme.Lab3_4Theme
 import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize

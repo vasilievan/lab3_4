@@ -32,9 +32,4 @@ object Shared {
             )
         }
     }
-
-    fun <T> openActivity(activity: Activity, activityClass: Class<T>) {
-        val intent = Intent(activity, activityClass)
-        activity.startActivityForResult(intent, 1)
-    }
 }
